@@ -125,6 +125,8 @@ import unittest
     Transaction Class Unit Tests
     Investment Class Unit Tests
 
+    Test of adding and removing from each portfolio
+
     Test initialization of each class 
 
     Read investment data if from another file
