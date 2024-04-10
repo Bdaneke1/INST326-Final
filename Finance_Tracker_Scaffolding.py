@@ -124,6 +124,12 @@ import unittest
     Finance Class Unit Tests
     Transaction Class Unit Tests
     Investment Class Unit Tests
+
+    Test initialization of each class 
+
+    Read investment data if from another file
+
+    Test ability to use data to make reccomendation
     """
 
 if __name__ == '__main__':
