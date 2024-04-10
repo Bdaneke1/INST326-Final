@@ -120,6 +120,11 @@ class Investments:
 import unittest
 
 #all tests go here
+    """
+    Finance Class Unit Tests
+    Transaction Class Unit Tests
+    Investment Class Unit Tests
+    """
 
 if __name__ == '__main__':
     #unittest.main
