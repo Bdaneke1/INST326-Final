@@ -119,20 +119,23 @@ class Investments:
             
 import unittest
 
-#all tests go here
-    """
-    Finance Class Unit Tests
-    Transaction Class Unit Tests
-    Investment Class Unit Tests
+class TestFinanceMethods(unittest.TestCase):
+    def test_add_income(self):
+        finances = Finances()
+     
 
-    Test of adding and removing from each portfolio
+    def test_add_expense(self):
+        finances = Finances()
+      
 
-    Test initialization of each class 
+    def test_add_savings(self):
+        finances = Finances()
+     
+    def test_transaction(self):
+       
 
-    Read investment data if from another file
-
-    Test ability to use data to make reccomendation
-    """
+    def test_investment_add_remove(self):
+        
 
 if __name__ == '__main__':
-    #unittest.main
+    unittest.main()
