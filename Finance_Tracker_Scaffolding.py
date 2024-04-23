@@ -150,6 +150,8 @@ class TestFinanceMethods(unittest.TestCase):
 
     def test_add_savings(self):
         finances = Finances()
+        finances.add_savings_category("Savings Account")
+        self.assertIN("Savings Accounts", finances.savings)
      
     def test_transaction(self):
        
