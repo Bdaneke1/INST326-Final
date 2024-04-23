@@ -55,9 +55,25 @@ class Finances:
             start_date (str): start date of reporting period
             end_date (str): end date of reporting period
         """
-        #however we build the financial report
-        
-    #add save/load from file functions
+        report = {}
+        report['Income'] = = [inc for inc in self.income if start_date <= inc['date'] <= end_date]
+        report['Expenses'] = [exp for exp in self.expenses if start_date <= exp['date'] <= end_date]
+        report['Savings'] = [sav for sav in self.savings if start_date <= sav['date'] <= end_date]
+        return report
+
+
+    #If we use a JSON for the data, this is how we would save the data to a JSON file
+    def save_to_file(self, file_name):
+        with open(file_name, 'w') as file:
+            json.dump({'income': self.income, 'expenses': self.expenses, 'savings': self.savings}, file)
+
+    #If we use a JSON for the finanical data, this will ead it and update the clases 
+    def load_from_file(self, file_name):
+        with open(file_name, 'r') as file:
+            data = json.load(file)
+            self.income = data['income']
+            self.expenses = data['expenses']
+            self.savings = data['savings']
 
 class Transaction:
     """
@@ -95,7 +111,7 @@ class Investments:
             name (str): name of the portfolio
         """
         self.name = name
-        self.investments = [] #idk whether dictionary or list would be better for this
+        self.investments = {} 
         
     def add_investment(self, asset, amount):
         """
@@ -122,10 +138,14 @@ import unittest
 class TestFinanceMethods(unittest.TestCase):
     def test_add_income(self):
         finances = Finances()
+        finances.add_income_source("Work Salary")
+        self.assertIN("Work Salary", finances.income)
      
 
     def test_add_expense(self):
         finances = Finances()
+        finances.add_expense_category("Fixed and Variable Costs")
+        self.assertIn("Fixed and Variable Costs", finances.expenses)
       
 
     def test_add_savings(self):
