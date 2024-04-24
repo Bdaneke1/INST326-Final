@@ -154,10 +154,18 @@ class TestFinanceMethods(unittest.TestCase):
         self.assertIN("Savings Accounts", finances.savings)
      
     def test_transaction(self):
-       
+        transaction = Transaction("2024-04-23", "Expense", 500, "Rent")
+        self.assertEqual(transaction.date, "2024-04-23")
+        self.assertEqual(transaction.category, "Expense")
+        self.assertEqual(transaction.amount, 500)
+        self.assertEqual(transaction.description, "Rent")
 
     def test_investment_add_remove(self):
-        
+        investments = Investments("Portfolio")
+        investments.add_investment("Stocks", 5000)
+        self.assertIn("Stocks", investments.investments)
+        investments.remove_investment("Stocks")
+        self.assertNotIn("Stocks", investments.investments)
 
 if __name__ == '__main__':
     unittest.main()
