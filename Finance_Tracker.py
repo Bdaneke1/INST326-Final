@@ -3,7 +3,7 @@ import sys
 import requests
 
 """
-Basic Outline for the financial management system.
+Financial Management System
 """
 
 class Finances:
