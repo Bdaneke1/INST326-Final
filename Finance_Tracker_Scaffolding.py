@@ -31,6 +31,13 @@ class Finances:
         """
         self.income.append(source)
         
+    def update_income_source(self, old_source, new_source):
+        try:
+            index = self.income.index(old_source)
+            self.income[index] = new_source
+        except ValueError:
+            print("Income source not found.")
+            
     def add_expense_category(self, category):
         """
         Adds a new expense category to the system
@@ -39,6 +46,13 @@ class Finances:
             category (str): represents the name of the expense category
         """
         self.expenses.append(category)
+
+    def update_expense_category(self, old_category, new_category):
+        try:
+            index = self.expenses.index(old_category)
+            self.expenses[index] = new_category
+        except ValueError:
+            print("Expense category not found.")
         
     def add_savings_category(self, category): #may not be needed because of the investments class
         """
@@ -134,6 +148,24 @@ class Investments:
         """
         if asset in self.investments:
             del self.investments[asset]
+
+    def calculate_investment_growth(self, asset, growth_rate):
+        if asset in self.investments:
+            return self.investments[asset] * (1 + growth_rate)
+        else:
+            print("Investment not found.")
+            return None
+
+def convert_currency(amount, from_currency, to_currency):
+    try:
+        url = f"https://api.exchangerate-api.com/v4/latest/{from_currency}"
+        response = requests.get(url)
+        data = response.json()
+        rates = data['rates']
+        return amount * rates[to_currency]
+    except requests.exceptions.RequestException as e:
+        print(f"An error occurred: {e}")
+        return None
             
 import unittest
 
