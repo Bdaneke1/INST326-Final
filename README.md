@@ -12,7 +12,7 @@ Add Transaction: Add details of a new financial transaction.
 Add Investment: Record a new investment by specifying the asset and the amount invested.
 Generate Report: Generate a financial report for a specific date range.
 Save Data to JSON: Save current financial data to a JSON file.
-Load Data from JSON: Load financial data from a JSON file.
+Load Data from JSON: Load financial data from a JSON file (see Sample_Data.JSON for formatting and example usage.
 Convert Currency: Convert an amount from one currency to another based on real-time exchange rates.
 View Income: Display all recorded income entries.
 View Expenses: Display all recorded expenses.
