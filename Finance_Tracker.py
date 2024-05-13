@@ -91,7 +91,7 @@ class Finances:
 
     #If we use a JSON for the data, this is how we would save the data to a JSON file
     def save_to_file(self, file_name):
-         """
+        """
         Saves the financial data to a JSON file.
 
         Args:
