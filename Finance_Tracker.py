@@ -243,7 +243,8 @@ def main():
         print("10. View Expenses")
         print("11. View Transactions")
         print("12. View Investments")
-        print("13. Quit")
+        print("13. View Investment Growth")
+        print("14. Quit")
 
         choice = input("Enter your choice: ")
 
