@@ -91,6 +91,13 @@ class Finances:
 
     #If we use a JSON for the data, this is how we would save the data to a JSON file
     def save_to_file(self, file_name):
+         """
+        Saves the financial data to a JSON file.
+
+        Args:
+            file_name (str): file that the data will be saved to.
+        """        
+        
         try:
             with open(file_name, 'w') as file:
                 json.dump({'income': self.income, 'expenses': self.expenses}, file)
@@ -100,6 +107,13 @@ class Finances:
 
     #If we use a JSON for the financial data, this will read it and update the classes 
     def load_from_file(self, file_name):
+        """
+        Loads financial data from a JSON file and updates the class attributes.
+
+        Args:
+            file_name (str): file that the data will be saved to.
+        """
+        
         try:
             with open(file_name, 'r') as file:
                 data = json.load(file)
@@ -172,6 +186,21 @@ class Investments:
             return None
 
 def convert_currency(amount, from_currency, to_currency):
+    """
+    Converts an amount from one currency to another using the exchange rates from an external API.
+
+    Args:
+        amount (float): The amount to be converted.
+        from_currency (str): The source currency code.
+        to_currency (str): The target currency code.
+
+    Returns:
+        float: The converted amount if successful, None if an error occurs.
+
+    Raises:
+        Exception: If there's an issue with the API request or the currency codes, raises an invalidation in the input.
+    """
+    
     try:
         url = f"https://api.exchangerate-api.com/v4/latest/{from_currency}"
         response = requests.get(url)
