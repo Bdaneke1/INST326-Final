@@ -2,7 +2,7 @@ This Financial Management System is a Python-based application designed to help 
 manage their financial data effectively. It allows users to track incomes, expenses, transactions, and investments, 
 and to generate comprehensive financial reports over specified date ranges. To run the program, you will need Python 
 installed on your computer. Navigate to the directory containing the program files via command line interface and execute the following command:
-python finance_manager.py
+python finance_tracker.py
 
 Upon launching the program, you will be presented with a menu of options:
 
