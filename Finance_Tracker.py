@@ -76,6 +76,9 @@ class Finances:
         Args:
             start_date (str): start date of reporting period
             end_date (str): end date of reporting period
+
+        Returns:
+        Comes back with a generate report from the beginning to end.
         """
         report = {
             'Income': [inc for inc in self.income if start_date <= inc['date'] <= end_date],
@@ -144,7 +147,7 @@ class Investments:
         """
         Removes an asset/investment from the portfolio
         
-        ArgS:
+        Args:
             asset (str): name of the asset that's being removed
         """
         if asset in self.investments:
