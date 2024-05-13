@@ -275,6 +275,12 @@ def main():
             for asset, amount in finances.investments.items():
                 print(f"Asset: {asset}, Amount: {amount}")
         elif choice == '13':
+            asset = input("Enter the name of the asset: ")
+            growth_rate = float(input ("Enter the growth rate (as a decimal): "))
+            new_amount = investments.calculate_investment_growth(asset, growth_rate)
+            if new_amount is not None:
+                print(f"{asset}'s new value after growth: {new_amount}")
+        elif choice == '14':
             print("Exiting Financial Management System.")
             sys.exit()
         else:
