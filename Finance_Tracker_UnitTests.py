@@ -1,5 +1,5 @@
 import unittest
-import finance_tracker
+import Finance_Tracker
 
 class TestFinanceMethods(unittest.TestCase):
     def setUp(self):
