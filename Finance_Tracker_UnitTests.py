@@ -4,8 +4,8 @@ import Finance_Tracker
 class TestFinanceMethods(unittest.TestCase):
     def setUp(self):
         """Setup for each test case; ensures each test is independent."""
-        self.finances = finance_tracker.Finances()
-        self.investments = finance_tracker.Investments("My Portfolio")
+        self.finances = Finance_Tracker.Finances()
+        self.investments = Finance_Tracker.Investments("My Portfolio")
 
     def test_add_income(self):
         """Test adding income and validate all properties."""
@@ -85,14 +85,14 @@ class TestFinanceMethods(unittest.TestCase):
         amount = 100
         from_currency = 'USD'
         to_currency = 'EUR'
-        converted_amount = convert_currency(amount, from_currency, to_currency)
+        converted_amount = self.convert_currency(amount, from_currency, to_currency)
 
         expected_amount = amount * mock_response['rates'][to_currency]
         self.assertEqual(converted_amount, expected_amount)
 
     def test_main(self, mock_stdout, mock_input):
         mock_input.side_effect = ['1', 'Work Salary', '2000', '2024-05-01', '14']
-        main()
+        self.main()
         expected_output = (
             "Welcome to the Financial Management System!\n"
             "\nOptions:\n1. Add Income\n2. Add Expense\n3. Add Transaction\n4. Add Investment\n5. Generate Report\n6. Save Data to JSON\n7. Load Data from JSON\n8. Convert Currency\n9. View Income\n10. View Expenses\n11. View Transactions\n12. View Investments\n13. View Investment Growth\n14. Quit\n"
