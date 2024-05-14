@@ -224,6 +224,9 @@ def convert_currency(amount, from_currency, to_currency):
         return None
 
 def main():
+    """
+    Runs the Financial Management System.
+    """
     print("Welcome to the Financial Management System!")
     
     finances = Finances()
